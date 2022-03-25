@@ -38,7 +38,7 @@ function randomPizza(){
         for (let i = 0; i < numCheese; i++) { //we're going to go through the loop numCheeses times
             let random = Math.floor(Math.random()*cheeseOptions.length); //creating a random number for our cheeseOptions index. I have to create it every loop because cheeseOptions.length shrinks with each loop
             pizza["cheeses"].push(cheeseOptions[random]) //adding the cheese choice
-            cheeseOptions = cheeseOptions.filter(e => e !== cheeseOptions[random]); //I'm now removing that cheese choice from the array so we can avoid duplicate cheeses
+            cheeseOptions = cheeseOptions.filter(cheese => cheese !== cheeseOptions[random]); //I'm now removing that cheese choice from the array using .filter() so we can avoid duplicate cheeses
         }
     }
     //Basically did the exact same thing as with the cheeses above, just for the toppings
@@ -48,7 +48,7 @@ function randomPizza(){
         for (let i = 0; i < numToppings; i++) {
             let random = Math.floor(Math.random()*toppingOptions.length);
             pizza["toppings"].push(toppingOptions[random])
-            toppingOptions = toppingOptions.filter(e => e !== toppingOptions[random]);
+            toppingOptions = toppingOptions.filter(topping => topping !== toppingOptions[random]);
         }
     }
 
